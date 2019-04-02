@@ -22,6 +22,7 @@ class Fasta(object):
         handle.write(self.sequence + "\n")
 
     def __repr__(self):
+   # The f after the return seems to be an error here, I had to remove it to run the script correctly
         return f">{self.name}\n{self.sequence[0:61]}"
 
 class Info(object):
