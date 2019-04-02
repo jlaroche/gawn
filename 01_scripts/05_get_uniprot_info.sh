@@ -19,6 +19,8 @@ cat "$SWISSPROT_HITS" |
     do
         feature=$(echo $i | cut -d " " -f 1 | perl -pe 's/\|/\\|/g')
         hit=$(echo $i | cut -d " " -f 2 | cut -d "." -f 1)
+# See additionnal comment below:
+#        hit=$(echo $i | cut -d " " -f 2 | cut -d "|" -f 2)
         echo "wget -q -O - http://www.uniprot.org/uniprot/${hit}.txt > $INFO_FOLDER/${feature}.info"
     done > "$ANNOTATION_FOLDER"/"$GENBANK_COMMANDS"
 
